@@ -1,45 +1,152 @@
 
-# 📸 PDF Snap Pro: High-Fidelity Serialization Engine
+# 📸 PDF Snap Pro: Elite Serialization Engine
 
-**The ultimate deterministic batch processor for pixel-perfect PDF document extraction.**
+<p align="center">
+  <img src="public/pwa-512x512.png" width="180" alt="PDF Snap Pro Logo">
+</p>
 
-PDF Snap Pro is an advanced utility engineered for production-grade document workflows. It enforces a strict "Zero Margin" policy, rendering PDF first-pages at a native 300 DPI resolution and automatically sanitizing filenames to ensure system compatibility.
-
-## 🎯 Technical Pillars
-
-### 1. Automatic Filename Sanitization
-Document integrity is maintained by ensuring "regular" filenames. Upon upload:
-- Spaces and special characters are replaced with underscores (`_`).
-- Non-alphanumeric characters are stripped.
-- Filenames are collapsed for consistency (e.g., `My Document @ 2024.pdf` → `My_Document_2024.pdf`).
-- All outputs (Renamed PDF and PNG Screenshot) share this sanitized base name.
-
-### 2. High-Precision Rendering
-- **Native 300 DPI**: Rasterization calculated at a scale factor of 4.1667x.
-- **Zero-Margin Math**: Canvas dimensions are bound strictly to the PDF `MediaBox`.
-- **Lossless Serialization**: Exports to optimized `image/png`.
-
-### 3. Unified Batch Export
-The pipeline culminates in a single, high-reliability download:
-- **Individual Downloads**: Triggered during live processing for immediate feedback.
-- **ZIP Package**: A unified export containing two organized folders:
-  - `/pdfs`: The sanitized/renamed source documents.
-  - `/screenshots`: The pixel-perfect 300 DPI PNG snapshots.
-
-## 📂 Installation & Execution
-
-1. **Serve locally**: Use any static file server.
-   ```bash
-   npx serve .
-   ```
-2. **Load PDFs**: Select multiple files. They are sanitized on the fly.
-3. **Execute**: Click "PROCESS & DOWNLOAD". The engine will sequentially render images and automatically trigger a ZIP download of the complete set once finished.
-
-## 🏗 Stack
-- **React 19**: Responsive state management.
-- **PDF.js**: Vector parsing engine.
-- **JSZip**: In-memory batch packaging.
-- **Tailwind CSS**: Professional engineering UI.
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0.0-FF6D00?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Platform-Web%20|%20Desktop%20|%20Mobile-brightgreen?style=for-the-badge" alt="Platforms">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Build-Passing-vibrant?style=for-the-badge" alt="Build Status">
+</p>
 
 ---
-*Built for architects who demand deterministic results.*
+
+## ✨ Overview
+
+**PDF Snap Pro** is a high-performance, deterministic document processing engine designed for architects, engineers, and developers who require **pixel-perfect accuracy**. Whether you're running it on a high-end desktop, a mobile device, or via a web browser, it delivers consistent, 300 DPI snapshots with zero margin artifacts.
+
+### 🧠 Project Mind-Map
+
+```mermaid
+mindmap
+  root((PDF Snap Pro))
+    Core Engine
+      PDF.js Vector Parser
+      300 DPI Rasterization
+      Zero-Margin Math
+    Platforms
+      Web (Modern Browsers)
+      Desktop (Electron App)
+      Mobile (PWA Installable)
+    Features
+      Filename Sanitization
+      Batch Processing
+      Unified ZIP Export
+    Tech Stack
+      React 19
+      Tailwind CSS
+      JSZip
+      Vite
+```
+
+---
+
+## ⚡ Technical Architecture
+
+The following diagram illustrates the high-fidelity serialization pipeline.
+
+```mermaid
+graph TD
+    A[Upload PDF Files] --> B{Sanitization};
+    B -->|Clean Names| C[Load PDF.js Parser];
+    C --> D[Calculate MediaBox Bounds];
+    D --> E[Native 300 DPI Render];
+    E --> F[Generate PNG Snapshot];
+    F --> G[Zip Package Creation];
+    G --> H[Unified ZIP Download];
+    
+    subgraph "Processing Logic"
+    C
+    D
+    E
+    end
+```
+
+---
+
+## 🚀 Multi-Platform Launch Guide
+
+### 📂 1. Desktop Application (Electron)
+Experience the power of a native desktop shell with system-level optimization.
+
+- **Developer Mode**:
+  ```powershell
+  npm run electron:dev
+  ```
+- **Build Portable App**:
+  ```powershell
+  npm run electron:build
+  ```
+> [!TIP]
+> The desktop version supports larger file batches and provides a dedicated workspace environment.
+
+### 📱 2. Mobile Experience (PWA)
+Install PDF Snap Pro directly to your home screen with zero installation.
+
+1. **Build the Assets**: `npm run build`
+2. **Preview & Host**: `npx vite preview`
+3. **Install**: Open the link in Chrome (Android) or Safari (iOS) and select **"Add to Home Screen"**.
+
+> [!IMPORTANT]
+> The mobile version utilizes sophisticated service workers for offline processing and instant updates.
+
+### 🌐 3. Web Deployment
+Deploy to any static hosting (Vercel, Netlify, GitHub Pages).
+
+```bash
+npm run build
+```
+
+---
+
+## 🛠 Features & Patches
+
+| Feature | Description | Status |
+| :--- | :--- | :--- |
+| **Filename Sanitization** | Auto-strips special characters and spaces for OS safety. | ✅ Stable |
+| **300 DPI Rendering** | High-fidelity snapshots at exact MediaBox dimensions. | ✅ Stable |
+| **Batch ZIP Export** | Multi-file packaging with organized folder structure. | ✅ Stable |
+| **Cross-Platform UI** | Responsive dark-mode interface powered by Tailwind. | ✅ Stable |
+| **Offline Support** | Fully functional processing without internet connection. | 🛡️ Patch 1.2 |
+
+---
+
+## 💻 Development Workflow
+
+To contribute or extend the engine:
+
+1. **Clone & Install**:
+   ```bash
+   npm install
+   ```
+2. **Run Linting**:
+   ```bash
+   npm run lint
+   ```
+3. **Start Dev Server**:
+   ```bash
+   npm run dev
+   ```
+
+```mermaid
+gantt
+    title Development Roadmap
+    dateFormat  YYYY-MM-DD
+    section Core
+    PDF Rendering Logic     :done,    des1, 2025-12-01, 2025-12-10
+    Sanitization Engine     :done,    des2, 2025-12-10, 2025-12-15
+    section Multi-Platform
+    Electron Integration    :done,    des3, 2025-12-20, 2025-12-22
+    PWA Implementation      :active,  des4, 2025-12-22, 2025-12-24
+    section Future
+    Advanced OCR Patches    :todo,    des5, 2026-01-01, 15d
+```
+
+---
+
+<p align="center">
+  <i>Built with precision by the PDF Snap Pro Team.</i>
+</p>
