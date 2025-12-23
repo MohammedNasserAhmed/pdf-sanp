@@ -21,25 +21,29 @@
 ### 🧠 Project Mind-Map
 
 ```mermaid
-mindmap
-  root(("PDF Snap Pro"))
-    "Core Engine"
-      "PDF.js Vector Parser"
-      "300 DPI Rasterization"
-      "Zero-Margin Math"
-    "Platforms"
-      "Web (Modern Browsers)"
-      "Desktop (Electron App)"
-      "Mobile (PWA Installable)"
-    "Features"
-      "Filename Sanitization"
-      "Batch Processing"
-      "Unified ZIP Export"
-    "Tech Stack"
-      "React 19"
-      "Tailwind CSS"
-      "JSZip"
-      "Vite"
+graph TD
+    Root(("PDF Snap Pro"))
+    
+    Root --> Core["Core Engine"]
+    Core --> P1["PDF.js Vector Parser"]
+    Core --> P2["300 DPI Rasterization"]
+    Core --> P3["Zero-Margin Math"]
+    
+    Root --> Platforms["Platforms"]
+    Platforms --> L1["Web (Modern Browsers)"]
+    Platforms --> L2["Desktop (Electron App)"]
+    Platforms --> L3["Mobile (PWA Installable)"]
+    
+    Root --> Features["Features"]
+    Features --> F1["Filename Sanitization"]
+    Features --> F2["Batch Processing"]
+    Features --> F3["Unified ZIP Export"]
+    
+    Root --> Tech["Tech Stack"]
+    Tech --> T1["React 19"]
+    Tech --> T2["Tailwind CSS"]
+    Tech --> T3["JSZip"]
+    Tech --> T4["Vite"]
 ```
 
 ---
@@ -87,7 +91,7 @@ Experience the power of a native desktop shell with system-level optimization.
 Install PDF Snap Pro directly to your home screen with zero installation.
 
 1. **Build the Assets**: `npm run build`
-2. **Preview & Host**: `npx vite preview`
+2. **Preview & Host**: `npm run preview`
 3. **Install**: Open the link in Chrome (Android) or Safari (iOS) and select **"Add to Home Screen"**.
 
 > [!IMPORTANT]
@@ -133,16 +137,16 @@ To contribute or extend the engine:
 
 ```mermaid
 gantt
-    title "Development Roadmap"
+    title Development Roadmap
     dateFormat  YYYY-MM-DD
-    section "Core"
-    "PDF Rendering Logic"     :done,    des1, 2025-12-01, 2025-12-10
-    "Sanitization Engine"     :done,    des2, 2025-12-10, 2025-12-15
-    section "Multi-Platform"
-    "Electron Integration"    :done,    des3, 2025-12-20, 2025-12-22
-    "PWA Implementation"      :active,  des4, 2025-12-22, 2025-12-24
-    section "Future"
-    "Advanced OCR Patches"    :todo,    des5, 2026-01-01, 15d
+    section Core
+    PDF Rendering Logic     :done, des1, 2025-12-01, 2025-12-10
+    Sanitization Engine     :done, des2, 2025-12-10, 2025-12-15
+    section Multi-Platform
+    Electron Integration    :done, des3, 2025-12-20, 2025-12-22
+    PWA Implementation      :active, des4, 2025-12-22, 2025-12-24
+    section Future
+    Advanced OCR Patches    :crit, active, des5, 2026-01-01, 15d
 ```
 
 ---
