@@ -22,24 +22,24 @@
 
 ```mermaid
 mindmap
-  root((PDF Snap Pro))
-    Core Engine
-      PDF.js Vector Parser
-      300 DPI Rasterization
-      Zero-Margin Math
-    Platforms
-      Web (Modern Browsers)
-      Desktop (Electron App)
-      Mobile (PWA Installable)
-    Features
-      Filename Sanitization
-      Batch Processing
-      Unified ZIP Export
-    Tech Stack
-      React 19
-      Tailwind CSS
-      JSZip
-      Vite
+  root(("PDF Snap Pro"))
+    "Core Engine"
+      "PDF.js Vector Parser"
+      "300 DPI Rasterization"
+      "Zero-Margin Math"
+    "Platforms"
+      "Web (Modern Browsers)"
+      "Desktop (Electron App)"
+      "Mobile (PWA Installable)"
+    "Features"
+      "Filename Sanitization"
+      "Batch Processing"
+      "Unified ZIP Export"
+    "Tech Stack"
+      "React 19"
+      "Tailwind CSS"
+      "JSZip"
+      "Vite"
 ```
 
 ---
@@ -50,13 +50,13 @@ The following diagram illustrates the high-fidelity serialization pipeline.
 
 ```mermaid
 graph TD
-    A[Upload PDF Files] --> B{Sanitization};
-    B -->|Clean Names| C[Load PDF.js Parser];
-    C --> D[Calculate MediaBox Bounds];
-    D --> E[Native 300 DPI Render];
-    E --> F[Generate PNG Snapshot];
-    F --> G[Zip Package Creation];
-    G --> H[Unified ZIP Download];
+    A["Upload PDF Files"] --> B{"Sanitization"}
+    B -->|"Clean Names"| C["Load PDF.js Parser"]
+    C --> D["Calculate MediaBox Bounds"]
+    D --> E["Native 300 DPI Render"]
+    E --> F["Generate PNG Snapshot"]
+    F --> G["Zip Package Creation"]
+    G --> H["Unified ZIP Download"]
     
     subgraph "Processing Logic"
     C
@@ -133,16 +133,16 @@ To contribute or extend the engine:
 
 ```mermaid
 gantt
-    title Development Roadmap
+    title "Development Roadmap"
     dateFormat  YYYY-MM-DD
-    section Core
-    PDF Rendering Logic     :done,    des1, 2025-12-01, 2025-12-10
-    Sanitization Engine     :done,    des2, 2025-12-10, 2025-12-15
-    section Multi-Platform
-    Electron Integration    :done,    des3, 2025-12-20, 2025-12-22
-    PWA Implementation      :active,  des4, 2025-12-22, 2025-12-24
-    section Future
-    Advanced OCR Patches    :todo,    des5, 2026-01-01, 15d
+    section "Core"
+    "PDF Rendering Logic"     :done,    des1, 2025-12-01, 2025-12-10
+    "Sanitization Engine"     :done,    des2, 2025-12-10, 2025-12-15
+    section "Multi-Platform"
+    "Electron Integration"    :done,    des3, 2025-12-20, 2025-12-22
+    "PWA Implementation"      :active,  des4, 2025-12-22, 2025-12-24
+    section "Future"
+    "Advanced OCR Patches"    :todo,    des5, 2026-01-01, 15d
 ```
 
 ---
