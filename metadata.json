@@ -1,0 +1,5 @@
+{
+  "name": "Pixel-Perfect PDF Snap",
+  "description": "High-resolution, zero-margin PDF-to-PNG batch processor. Renders the first page of any PDF at 300 DPI and saves it directly to your local filesystem.",
+  "requestFramePermissions": []
+}
