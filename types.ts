@@ -9,6 +9,7 @@ export enum ProcessingStatus {
 export interface PDFFile {
   id: string;
   file: File;
+  originalFilename: string; // Track original for logging
   status: ProcessingStatus;
   error?: string;
   progress: number;
